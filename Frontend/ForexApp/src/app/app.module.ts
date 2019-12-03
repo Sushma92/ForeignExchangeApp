@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { TradingbookComponent } from './tradingbook/tradingbook.component';
 import { TradininfoComponent } from './tradininfo/tradininfo.component';
-import { LoginComponent } from './login/login.component';
-import { RouterModule } from '@angular/router'
+
+import { RouterModule } from '@angular/router';
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { RouterModule } from '@angular/router'
     CustomerComponent,
     TradingbookComponent,
     TradininfoComponent,
-    LoginComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormBuilder,
+    FormGroup,
+    Validators
   ],
   providers: [],
   bootstrap: [AppComponent]
