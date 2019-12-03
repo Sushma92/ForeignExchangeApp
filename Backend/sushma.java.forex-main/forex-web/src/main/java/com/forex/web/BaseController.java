@@ -25,13 +25,13 @@ public abstract class BaseController<T extends BaseEntity, R> {
 		return ResponseEntity.ok(entity);
 	}
 
-	protected abstract Object getBaseService();
-
 	@GetMapping(path = "/delete")
 	public ResponseEntity<String> delete(Long id) {
 		this.getBaseService().delete(id);
 		return ResponseEntity.ok("");
 	}
+	
+	protected abstract Object getBaseService();
 	
 	@GetMapping(path = "/generate-multiple")
 	public ResponseEntity<String> generateMultiple(Integer noOfEntities) {
