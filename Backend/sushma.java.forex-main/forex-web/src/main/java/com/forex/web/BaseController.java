@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.forex.common.entity.BaseEntity;
+import com.forex.service.BaseService;
 
 public abstract class BaseController<T extends BaseEntity, R> {
 
@@ -31,11 +32,11 @@ public abstract class BaseController<T extends BaseEntity, R> {
 		return ResponseEntity.ok("");
 	}
 	
-	protected abstract Object getBaseService();
-	
+	public abstract BaseService<T,R> getBaseService();
+
 	@GetMapping(path = "/generate-multiple")
 	public ResponseEntity<String> generateMultiple(Integer noOfEntities) {
-		this.getBaseService()).generateMultiple(noOfEntities);
+		this.getBaseService().generateMultiple(noOfEntities);
 		return ResponseEntity.ok("");
 	}
 

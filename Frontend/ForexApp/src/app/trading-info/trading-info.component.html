@@ -1,3 +1,27 @@
-<p>
-  trading-info works!
-</p>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">From Currency</th>
+          <th scope="col">To Currency</th>
+          <th scope="col">From Currency Value</th>
+          <th scope="col">To Currency Value</th>
+          <th scope="col">Trading Date</th>
+          <th scope="col">Trading Completion Date</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Total Discount</th>
+          <th scope="col">Overall Sum</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TradingInfo } from './trading-info';
+import { TradingInfoService } from '../services/trading-info.service';
 
 @Component({
   selector: 'app-trading-info',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TradingInfoComponent implements OnInit {
 
-  constructor() { }
+  tradingInfo : TradingInfo[];
+
+  constructor(private tradingInfoService : TradingInfoService) {
+
+   }
 
   ngOnInit() {
+    this.tradingInfoService.findAll().subscribe(data => {this.tradingInfo = data;})
   }
 
 }
